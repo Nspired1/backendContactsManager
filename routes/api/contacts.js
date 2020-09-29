@@ -61,7 +61,7 @@ router.put("/:contactId", function (req, res) {
 // @desc delete ONE contact
 // @access Public
 router.delete("/:contactId", function (req, res) {
-  db.Contact.remove({ _id: req.params.contactId })
+  db.Contact.deleteOne({ _id: req.params.contactId })
     .then(function () {
       res.json({ message: "Contact Deleted" });
     })
